@@ -36,7 +36,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+
     user = User.find(params[:id])
+    Post.delete_all(user_id: user.id)
     user.destroy
     redirect_to root_path
   end

@@ -1,0 +1,51 @@
+  @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg:                          #ecf0f1;
+$font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:                    45px;
+$navbar-default-bg:                white;
+$navbar-default-brand-color:       #c0392b;
+$brand-primary:                    #c0392b;
+$jumbotron-bg:                     white;
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';  
+
+img {
+    width:35px;
+    height: auto;
+    margin-top: -10px;
+}
+
+th, td {
+  text-align: center;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+h4 {
+  text-align: left;
+  color: gray; 
+  display: inline-block;
+  margin-right: 10px;
+}
+
+h5 {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#session_table {
+  max-width: 60%;
+}
+
+thead {
+  background-color: #d35400;
+  color: white;
+}
+
+button {
+  margin-top: 5px;
+}

@@ -1,0 +1,12 @@
+<h4>Update Post </h4>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@post.user, @post] do |f| %>
+      <%= f.label "Title" %>
+      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.label "Body" %>
+      <%= f.text_field :body, class: 'form-control' %>
+      <%= f.submit "Save changes", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

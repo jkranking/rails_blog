@@ -1,14 +1,17 @@
 <h4>New Post </h4>
 <div class="row">
   <div class="col-md-6">
-    <%= form_for [@user, @post] do |f| %>
-
+    <%= form_for [@post.user, @post] do |f| %>
       <%= f.label "title" %>
       <%= f.text_field :title, class: 'form-control' %>
       <%= f.label "body" %>
       <%= f.text_field :body, class: 'form-control' %>
-      <%= f.hidden_field :user_id, value: @user.id %>
-
+      <%= f.label "tags" %>
+      <div class="form-inline form-group-sm classes">
+        <%= f.text_field :tags, multiple: true, class: 'form-control' %>
+        <%= f.text_field :tags, multiple: true, class: 'form-control' %>
+        <%= f.text_field :tags, multiple: true, class: 'form-control' %>
+      </div>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
   </div>

@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     	t.string :title
     	t.text	:body
     	t.integer :user_id
+    	t.string :tags, array: true, default: []
     	t.timestamps
     end
   end

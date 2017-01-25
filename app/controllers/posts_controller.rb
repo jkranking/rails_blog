@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	end
 
   def user_posts_index
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @posts = @user.posts
   end
 
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 	def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-    	redirect_to user_post_path(@post.id), :notice => "post has been updated"
+    	redirect_to user_post_path(@post.id), :notice => "Your post has been updated"
     else
       render "edit"
     end 

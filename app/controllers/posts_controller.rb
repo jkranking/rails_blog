@@ -14,12 +14,13 @@ class PostsController < ApplicationController
 	end
 
 	def new
-    @user = User.find(params[:user_id])
-		@post = Post.new
+    user = User.find(params[:user_id])
+		@post = user.posts.new
 	end 
 
 	def create
-    @post = Post.new(post_params)
+    user = User.find(params[:user_id])
+    @post = user.posts.new(post_params)
     if @post.save
       redirect_to posts_path, :notice => "New post was saved"
     else
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :body, :user_id)
+      params.require(:post).permit(:title, :body, :user_id, tags: [])
     end
 
 end

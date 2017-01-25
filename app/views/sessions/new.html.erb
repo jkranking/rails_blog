@@ -1,16 +1,15 @@
-<h4>New User </h4>
+<h4> Login </h4>
+
 <div class="row">
   <div class="col-md-6">
-    <%= form_for @user do |f| %>
+    <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label "Name" %>
-      <%= f.text_field :name, class: 'form-control' %>
       <%= f.label "Email" %>
       <%= f.text_field :email, class: 'form-control' %>
       <%= f.label "Password" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Login", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

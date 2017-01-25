@@ -1,5 +1,12 @@
 <% @posts.each do |post| %>
   <h2><%= link_to post.title, user_post_path(post.user, post) %></h2>
   <p><%= post.body %></p>
-	<h4>user: <%= post.user.name %></h4>
+	<h4>user: <%= post.user.name %></h4><br>
+
+	<% if post.tags.length > 0 %>
+		<h4>tags:</h4>
+		<% post.tags.each do |tag| %>
+			<h5><%= tag %></h5>
+		<% end %>
+	<% end %>
 <% end %>
